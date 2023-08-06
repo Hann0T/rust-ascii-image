@@ -51,11 +51,33 @@ fn main() {
         final_vec.push(vec);
     }
 
-    for vec in final_vec {
-        print!("\x1b[?25l");
-        let string = vec.join("");
-        println!("{:?}", string);
-    }
+    println!("{:?}", final_vec);
+    //for vec in final_vec {
+    //    print!("\x1b[?25l");
+    //    let string = vec.join("");
+    //    println!("{:?}", string);
+    //}
 
     // TODO: export a new image
+
+    /*
+    for x in 0..rgb.width() {
+        for y in 0..rgb.height() {
+            let pixel = rgb.get_pixel_checked(x, y).unwrap();
+            let r = pixel.0[0] as u32;
+            let g = pixel.0[1] as u32;
+            let b = pixel.0[2] as u32;
+            let prom = (r + g + b) / 3;
+
+            let mut index = map_range(prom, (0, 255), (0, density.len() as u32));
+
+            if index >= density.len() as u32 {
+                index -= 1;
+            }
+            final_vec.push(density[index as usize]);
+        }
+    }
+
+    println!("{:?}", final_vec);
+    */
 }
